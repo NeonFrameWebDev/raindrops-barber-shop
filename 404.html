@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07090C">
+<title>Not Found, Raindrops Barber Shop</title>
+<meta name="description" content="Slipped on the way in. Head back to the shop.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@600;700&display=swap"></noscript>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="is-404">
+
+<div id="cursor" aria-hidden="true">
+  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="16" cy="16" r="6"/><path d="M16 2v6M16 24v6M2 16h6M24 16h6"/></svg>
+</div>
+
+<nav class="nav is-scrolled" id="nav" aria-label="Primary">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__mark" aria-label="Raindrops home">
+      <span class="nav__mark__drop" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 C12 2 4 11 4 16 A8 8 0 0 0 20 16 C20 11 12 2 12 2 Z"/></svg></span>
+      Raindrops
+    </a>
+    <ul class="nav__links" role="list">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="index.html#book">Book</a></li>
+      <li><a href="index.html#visit">Visit</a></li>
+    </ul>
+    <a href="index.html" class="nav__cta">Home</a>
+  </div>
+</nav>
+
+<main id="main">
+  <section class="notfound">
+    <div>
+      <p class="eyebrow eyebrow--red">Page missed the barber</p>
+      <h1 class="neon-text--red">404</h1>
+      <p class="lead">That page slipped between the cape and the chair. The shop is still open. Head home, grab a cut.</p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 24px;">
+        <a href="index.html" class="btn btn--primary"><span class="btn__dot"></span>Back to home</a>
+        <a href="services.html" class="btn btn--ghost">See services <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="main.js" defer></script>
+</body>
+</html>

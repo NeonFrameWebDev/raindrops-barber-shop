@@ -1,0 +1,13 @@
+{
+  "name": "Raindrops Barber Shop",
+  "short_name": "Raindrops",
+  "description": "Barber shop in Las Vegas. Fades, tapers, beard lineups, straight razor. 1829 E Charleston Blvd.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07090C",
+  "theme_color": "#07090C",
+  "icons": [
+    { "src": "favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "apple-touch-icon.png", "type": "image/png", "sizes": "180x180" }
+  ]
+}
