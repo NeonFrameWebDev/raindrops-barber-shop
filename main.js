@@ -84,13 +84,16 @@
         ctx.stroke();
       }
 
-      raf = requestAnimationFrame(tick);
+      if (!document.hidden) raf = requestAnimationFrame(tick);
     };
 
     let raf = null;
     resize();
     tick();
     window.addEventListener("resize", resize);
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) tick();
+    });
 
     // Click ripples inside hero
     rainWrap.parentElement.addEventListener("pointermove", (e) => {
@@ -98,29 +101,6 @@
         const r = rainWrap.getBoundingClientRect();
         addRipple(e.clientX - r.left, e.clientY - r.top);
       }
-    });
-  }
-
-  /* ============ CUSTOM CURSOR + CLICK RIPPLE ============ */
-  const cursor = document.getElementById("cursor");
-  if (cursor && !isMobile) {
-    let x = window.innerWidth / 2, y = window.innerHeight / 2;
-    let tx = x, ty = y;
-    const onMove = (e) => { tx = e.clientX; ty = e.clientY; };
-    window.addEventListener("pointermove", onMove);
-    const step = () => {
-      x += (tx - x) * 0.22;
-      y += (ty - y) * 0.22;
-      cursor.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
-      requestAnimationFrame(step);
-    };
-    step();
-    const hoverables = "a, button, input, select, textarea, .channel, .cut";
-    document.addEventListener("pointerover", (e) => {
-      if (e.target.closest(hoverables)) document.body.classList.add("is-hovering");
-    });
-    document.addEventListener("pointerout", (e) => {
-      if (e.target.closest(hoverables)) document.body.classList.remove("is-hovering");
     });
   }
 
