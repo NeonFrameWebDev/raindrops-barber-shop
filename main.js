@@ -137,6 +137,28 @@
     });
   }
 
+  /* ============ Live open/closed status ============ */
+  const statusWrap = document.getElementById("liveStatus");
+  const statusText = document.getElementById("statusText");
+  if (statusWrap && statusText) {
+    const updateStatus = () => {
+      const now = new Date();
+      const h = now.getHours();
+      const isOpen = h >= 9 && h < 20;
+      if (isOpen) {
+        statusWrap.classList.remove("is-closed");
+        statusText.innerHTML = "Open now \u00B7 Closes at 8 PM";
+      } else {
+        statusWrap.classList.add("is-closed");
+        statusText.innerHTML = (h < 9)
+          ? "Closed \u00B7 Opens at 9 AM"
+          : "Closed \u00B7 Opens tomorrow at 9 AM";
+      }
+    };
+    updateStatus();
+    setInterval(updateStatus, 60000);
+  }
+
   /* ============ NAV: scroll state ============ */
   const nav = document.getElementById("nav");
   if (nav) {

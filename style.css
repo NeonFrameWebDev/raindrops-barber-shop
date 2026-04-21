@@ -654,37 +654,42 @@ p { margin: 0 0 1em; }
   justify-content: center;
   margin-bottom: 40px;
 }
-.book__channels {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  max-width: 980px;
-  margin: 48px auto 0;
-  padding-top: 48px;
-  border-top: 1px solid rgba(232, 228, 218, 0.1);
-}
-.channel {
-  padding: 28px 24px;
-  background: var(--smoke);
-  border: 1px solid rgba(232, 228, 218, 0.1);
-  border-radius: 3px;
-  text-align: left;
-  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
-  text-decoration: none;
-  color: var(--bone);
-  display: block;
-}
-.channel:hover { border-color: var(--neon); transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
-.channel h3 {
-  font-family: var(--display);
-  font-size: 22px;
-  margin: 0 0 6px;
-  color: var(--bone);
+/* Live open/closed status chip */
+.live-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 18px;
+  margin-bottom: 28px;
+  background: rgba(232, 50, 52, 0.10);
+  border: 1px solid rgba(232, 50, 52, 0.42);
+  border-radius: 100px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  color: var(--bone);
+  font-weight: 500;
+  transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
 }
-.channel p { margin: 0; color: var(--bone-2); font-size: 14px; line-height: 1.5; }
-.channel .eyebrow { margin-bottom: 10px; display: block; }
+.live-status.is-closed {
+  background: rgba(78, 195, 255, 0.08);
+  border-color: rgba(78, 195, 255, 0.35);
+  color: var(--chrome);
+}
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 12px rgba(232, 50, 52, 0.75);
+  animation: pulseDot 1.6s ease-in-out infinite;
+}
+.live-status.is-closed .live-dot {
+  background: var(--neon);
+  box-shadow: 0 0 10px rgba(78, 195, 255, 0.55);
+}
+@media (prefers-reduced-motion: reduce) { .live-dot { animation: none; } }
 
 /* Visit */
 .visit {
